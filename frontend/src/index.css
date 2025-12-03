@@ -1,54 +1,35 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+@theme {
+  --color-dark-bg: #0a0e1a;
+  --color-dark-secondary: #1a1f2e;
+  --color-orange: #ff6b35;
+  --color-orange-hover: #ff8555;
+  --color-text-gray: #b8c1d9;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*/
+@layer base {
+  body {
+    @apply bg-[#0a0e1a] text-white min-h-screen;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@layer components {
+  .btn-primary {
+    @apply bg-[#ff6b35] text-white px-6 py-3 rounded-lg hover:bg-[#ff8555] transition-all font-semibold;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-white px-6 py-3 rounded-lg border-2 border-white hover:bg-white hover:text-black transition-all font-semibold;
+  }
+  
+  .input-field {
+    @apply bg-transparent border-2 border-[#ff6b35] rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#ff8555] transition-all;
+  }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -60,9 +41,9 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #dd7806;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ff6b35;
   }
 }

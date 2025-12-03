@@ -30,13 +30,35 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required /> <br/><br/>
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required /> <br/><br/>
-        <button type="submit">Login</button>
-      </form>
+    <div className="min-h-screen bg-[#0a0e1a] flex items-center justify-center py-12 px-4 pt-24">
+      <div className="max-w-md w-full bg-[#1a1f2e] p-8 rounded-lg border border-gray-700 shadow-2xl">
+        <h1 className="text-3xl font-bold text-white mb-2 text-center">Login</h1>
+        <p className="text-[#ff6b35] text-center mb-6 text-sm">Enter your credentials below.</p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          <button 
+            type="submit"
+            className="w-full bg-[#ff6b35] text-white py-3 rounded-lg font-bold hover:bg-[#ff8555] transition mt-6"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

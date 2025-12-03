@@ -31,21 +31,61 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required /> <br/><br/>
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required /> <br/><br/>
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required /> <br/><br/>
-        <input type="password" name="password_confirmation" placeholder="Confirm Password" onChange={handleChange} required /> <br/><br/>
-        
-        <select name="role" onChange={handleChange}>
-          <option value="candidate">Candidate (Looking for Job)</option>
-          <option value="employer">Employer (Hiring)</option>
-        </select> <br/><br/>
+    <div className="min-h-screen bg-[#0a0e1a] flex items-center justify-center py-12 px-4 pt-24">
+      <div className="max-w-md w-full bg-[#1a1f2e] p-8 rounded-lg border border-gray-700 shadow-2xl">
+        <h1 className="text-3xl font-bold text-white mb-2 text-center">Registration</h1>
+        <p className="text-[#ff6b35] text-center mb-6 text-sm">Enter your details below.</p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Full Name" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          <input 
+            type="password" 
+            name="password_confirmation" 
+            placeholder="Confirm Password" 
+            onChange={handleChange} 
+            required 
+            className="w-full px-4 py-3 bg-transparent border-2 border-[#ff6b35] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff8555] transition"
+          />
+          
+          <select 
+            name="role" 
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#0a0e1a] border-2 border-[#ff6b35] rounded-lg text-white focus:outline-none focus:border-[#ff8555] transition"
+          >
+            <option value="candidate">Candidate (Looking for Job)</option>
+            <option value="employer">Employer (Hiring)</option>
+          </select>
 
-        <button type="submit">Register</button>
-      </form>
+          <button 
+            type="submit"
+            className="w-full bg-[#ff6b35] text-white py-3 rounded-lg font-bold hover:bg-[#ff8555] transition mt-6"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

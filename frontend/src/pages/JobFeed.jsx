@@ -25,21 +25,19 @@ export default function JobFeed() {
     }
   };
 
-  if (loading) return <div>Loading jobs...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <div className="text-center py-10 text-white">Loading jobs...</div>;
+  if (error) return <div className="text-center py-10 text-red-400">{error}</div>;
 
   return (
     <div>
-      <h1>Latest Jobs</h1>
-
       {/* Grid Layout for Jobs */}
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobs.length > 0 ? (
           jobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))
         ) : (
-          <p>No jobs found.</p>
+          <p className="col-span-full text-center text-gray-400">No jobs found.</p>
         )}
       </div>
     </div>
