@@ -16,7 +16,7 @@ export default function JobCard({ job }) {
       </div>
 
       <div className="mb-3">
-        <p className="text-gray-400">📍 {job.location || "Remote"}</p>
+        <p className="text-gray-400">{job.location || "Remote"}</p>
       </div>
 
       <p className="text-gray-300 mb-4">
@@ -27,7 +27,7 @@ export default function JobCard({ job }) {
             View Details
         </button>
         
-        {/* New Apply Button */}
+        
         <button 
             onClick={() => navigate(`/apply/${job.id}`)}
             className="bg-[#ff6b35] text-white py-2 px-4 rounded hover:bg-[#ff8555] transition"

@@ -11,21 +11,16 @@ export default function Hero() {
           alt="Automobile Workshop" 
           className="w-full h-full object-cover opacity-50" 
         />
-        {/* Dark Overlay to make text readable */}
+        
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
-      {/* --- SPOTLIGHT EFFECTS (Centered) --- */}
-      {/* Top Center Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-amber-600/30 to-transparent blur-3xl pointer-events-none z-0"></div>
-      
-      {/* Central Glow Ball */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full filter blur-[120px] pointer-events-none z-0"></div>
 
-      {/* --- CONTENT CONTAINER --- */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-amber-600/30 to-transparent blur-3xl pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full filter blur-[120px] pointer-events-none z-0"></div>
       <div className="relative z-10 mt-6 max-w-4xl mx-auto px-4 text-center">
         
-        {/* Headline */}
+     
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight tracking-tight">
           Unlock Your Potential <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600">
@@ -33,12 +28,12 @@ export default function Hero() {
           </span>
         </h1>
         
-        {/* Subheadline */}
+        
         <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
           Explore thousands of opportunities across every industry. Connect with top employers, 
           showcase your skills, and take the next big step in your career journey today.</p>
         
-        {/* Buttons */}
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link 
             to="/register" 

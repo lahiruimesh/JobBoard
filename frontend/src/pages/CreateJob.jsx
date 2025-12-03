@@ -24,7 +24,7 @@ export default function CreateJob() {
       navigate('/');
     } catch (err) {
       console.error(err);
-      // Show error message
+      
       setError(err.response?.data?.message || "Failed to post job. Are you an Employer?");
     }
   };
@@ -89,7 +89,7 @@ export default function CreateJob() {
             ></textarea>
           </div>
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button 
             type="submit" 
             className="w-full bg-[#ff6b35] text-white py-3 rounded-lg font-bold hover:bg-[#ff8555] transition mt-6"

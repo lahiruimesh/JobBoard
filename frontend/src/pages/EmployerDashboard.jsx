@@ -4,20 +4,18 @@ import { useNavigate } from 'react-router-dom';
 
 export default function EmployerDashboard() {
   const [jobs, setJobs] = useState([]);
-  const [applicants, setApplicants] = useState({}); // Store applicants by job ID
+  const [applicants, setApplicants] = useState({}); 
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchMyJobs();
   }, []);
 
-  // Note: We are fetching ALL jobs. 
-  // Ideally, you should make a backend endpoint for "my-jobs-only".
-  // For now, we assume the list contains your jobs or we filter them.
+  
   const fetchMyJobs = async () => {
     try {
       const res = await api.get('/jobs'); 
-      setJobs(res.data.data); // Laravel pagination puts data in .data
+      setJobs(res.data.data); 
     } catch (error) {
       console.error(error);
     }
@@ -27,7 +25,7 @@ export default function EmployerDashboard() {
     if(!window.confirm("Are you sure?")) return;
     try {
       await api.delete(`/jobs/${id}`);
-      fetchMyJobs(); // Refresh list
+      fetchMyJobs(); 
     } catch (error) {
       alert("Error deleting job");
     }
@@ -36,7 +34,7 @@ export default function EmployerDashboard() {
   const viewApplicants = async (jobId) => {
     try {
       const res = await api.get(`/applications/${jobId}`);
-      // Store applicants in state object: { "job_1": [user1, user2] }
+     
       setApplicants({ ...applicants, [jobId]: res.data });
     } catch (error) {
       alert("Error fetching applicants or Unauthorized");
@@ -77,7 +75,7 @@ export default function EmployerDashboard() {
                 </button>
               </div>
 
-              {/* Show Applicants if they exist in state */}
+              
               {applicants[job.id] && (
                 <div className="mt-4 bg-[#0a0e1a] border border-gray-700 p-4 rounded">
                   <h4 className="font-bold text-[#ff6b35] mb-2">Applicants:</h4>

@@ -8,7 +8,6 @@ export default function ApplyJob() {
   const [job, setJob] = useState(null);
 
   useEffect(() => {
-    // Fetch job details to show user what they are applying for
     api.get(`/jobs/${jobId}`)
        .then(res => setJob(res.data))
        .catch(err => alert("Error loading job"));
@@ -18,7 +17,7 @@ export default function ApplyJob() {
     try {
       await api.post('/applications', { job_id: jobId });
       alert("Applied Successfully!");
-      navigate('/dashboard/candidate'); // Send them to their dashboard
+      navigate('/dashboard/candidate');
     } catch (error) {
       alert(error.response?.data?.message || "Application Failed. (You might have already applied)");
     }

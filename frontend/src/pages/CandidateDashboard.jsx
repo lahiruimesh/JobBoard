@@ -10,7 +10,7 @@ export default function CandidateDashboard() {
 
   const fetchMyApplications = async () => {
     try {
-      const res = await api.get('/my-applications'); // We defined this in Laravel
+      const res = await api.get('/my-applications'); 
       setApplications(res.data);
     } catch (error) {
       console.error(error);

@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const token = localStorage.getItem('token'); // Check if user is logged in
+  const token = localStorage.getItem('token');
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -12,12 +12,11 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#0a0e1a]/5 backdrop-blur-sm text-white py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-      {/* LEFT: Logo */}
+      {/*Logo */}
       <div className="text-2xl font-bold cursor-pointer" onClick={() => navigate('/')}>
-        Auto<span className="text-[#ff6b35]">Jobs</span>
+        Jobs<span className="text-[#ff6b35]">Board</span>
       </div>
 
-      {/* MIDDLE: Links */}
       <div className="hidden md:flex space-x-8 font-medium">
         <Link to="/" className="hover:text-[#ff6b35] transition">Services</Link>
         <Link to="/" className="hover:text-[#ff6b35] transition">About Us</Link>
@@ -30,7 +29,8 @@ export default function Navbar() {
         )}
       </div>
 
-      {/* RIGHT: Buttons */}
+      
+      
       <div className="flex gap-4 items-center">
         {!token ? (
           <>
